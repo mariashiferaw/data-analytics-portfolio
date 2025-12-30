@@ -4,24 +4,21 @@
   <meta charset="UTF-8" />
   <title>Maria Shiferaw | Data Analytics Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Data analytics and machine learning projects by Maria Shiferaw." />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Data analytics and machine learning portfolio of Maria Shiferaw." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050816;
-      --bg-alt: #0b1020;
-      --card: #111827;
-      --accent: #4f46e5;
-      --accent-soft: rgba(79,70,229,0.12);
+      --bg-alt: #0b1120;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
       --text: #e5e7eb;
       --muted: #9ca3af;
       --border: #1f2937;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.8);
+      --danger: #f97373;
     }
 
     * {
@@ -31,10 +28,11 @@
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -42,134 +40,166 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     .page {
-      max-width: 1040px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 24px 16px 64px;
     }
 
-    header {
+    /* NAVBAR */
+    .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
+      justify-content: space-between;
+      padding: 8px 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(3,7,18,0.95), rgba(3,7,18,0.7), transparent);
     }
 
-    .logo {
-      font-weight: 700;
-      letter-spacing: .06em;
+    .nav-left {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
       font-size: 14px;
-      text-transform: uppercase;
-      color: var(--muted);
     }
 
-    nav a {
-      font-size: 14px;
+    .nav-links a {
       color: var(--muted);
-      margin-left: 18px;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: var(--text);
+      border-bottom-color: var(--accent);
     }
 
     /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .badge {
+    .pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.7);
+      padding: 4px 10px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 11px;
       color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
-    .badge span {
+    .pill-dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 12px rgba(34,197,94,0.7);
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.2);
     }
 
-    h1 {
-      font-size: clamp(32px, 4vw, 40px);
-      margin-bottom: 10px;
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 32px;
+      padding: 24px 24px 28px;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.16), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(59,130,246,0.18), transparent 60%),
+                  rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 22px 60px rgba(15,23,42,0.85);
+      margin-bottom: 32px;
     }
 
-    .hero-subtitle {
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 22px;
-      font-size: 14px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 9px 18px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
-      color: white;
-      box-shadow: 0 12px 30px rgba(59,130,246,0.5);
-    }
-
-    .btn-ghost {
-      background: rgba(15,23,42,0.7);
-      color: var(--muted);
-      border-color: var(--border);
-    }
-
-    .btn-ghost:hover {
-      color: var(--text);
-    }
-
-    .hero-meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hero-right {
-      background: radial-gradient(circle at top, var(--accent-soft), transparent 60%);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-right h2 {
-      font-size: 16px;
+    .hero-main h1 {
+      font-size: clamp(30px, 4vw, 36px);
+      font-weight: 700;
       margin-bottom: 12px;
     }
 
-    .chip-row {
+    .hero-main p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      font-size: 13px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.9);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border-color: transparent;
+      color: #0b1120;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.04);
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-tags {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .tag {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.3);
+      background: rgba(15,23,42,0.75);
+    }
+
+    .hero-side {
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 12px;
+    }
+
+    .hero-side h3 {
+      font-size: 13px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .side-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -180,142 +210,257 @@
       padding: 5px 10px;
       border-radius: 999px;
       background: rgba(15,23,42,0.9);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(148,163,184,0.35);
       font-size: 11px;
       color: var(--muted);
     }
 
-    .hero-right p {
-      font-size: 12px;
+    .hero-side p {
       color: var(--muted);
     }
 
-    /* SECTION */
-
+    /* ABOUT */
     section {
-      margin-bottom: 32px;
-      background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.96));
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      padding: 20px 18px 18px;
+      margin-bottom: 40px;
     }
 
     .section-title {
       font-size: 16px;
-      margin-bottom: 4px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .section-subtitle {
       font-size: 12px;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 24px;
+    }
+
+    .about-text {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .about-list {
+      font-size: 13px;
+      color: var(--muted);
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .about-card {
+      border-radius: 18px;
+      padding: 16px 18px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 13px;
+    }
+
+    .about-card h4 {
+      font-size: 13px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .about-card p {
+      color: var(--muted);
     }
 
     /* PROJECTS */
-
-    .projects {
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .project-card {
-      background: radial-gradient(circle at top left, rgba(79,70,229,0.14), rgba(15,23,42,0.96));
-      border-radius: var(--radius-md);
+      background: var(--card);
+      border-radius: 16px;
       border: 1px solid var(--border);
-      padding: 14px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-tag {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .project-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .project-desc {
+      padding: 14px 14px 12px;
       font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .project-meta {
       font-size: 11px;
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .project-links a {
-      font-size: 11px;
-      color: #a5b4fc;
-      margin-left: 10px;
-    }
-
-    /* EXPERIENCE / EDU / FOOTER */
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 18px;
-    }
-
-    .item {
-      margin-bottom: 10px;
-    }
-
-    .item-title {
+    .project-title {
       font-size: 13px;
       font-weight: 600;
     }
 
-    .item-meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .item-bullets {
+    .project-desc {
       font-size: 12px;
       color: var(--muted);
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .project-tags span {
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 10px;
+    }
+
+    .project-link {
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* EXPERIENCE & EDUCATION */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 26px;
+    }
+
+    .exp-item, .edu-item {
+      margin-bottom: 14px;
+    }
+
+    .exp-item h4, .edu-item h4 {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .exp-meta, .edu-meta {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .exp-list, .edu-list {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+      list-style: disc;
       padding-left: 16px;
     }
 
+    /* CONTACT */
+    .contact-card {
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 13px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 18px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .contact-links {
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .small-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
     footer {
-      margin-top: 18px;
+      margin-top: 26px;
       font-size: 11px;
       color: var(--muted);
       text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(31,41,55,0.9);
     }
 
-    @media (max-width: 768px) {
-      header {
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .projects-grid,
+      .two-col,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 6px;
       }
       .hero {
-        grid-template-columns: 1fr;
+        padding: 18px 16px 20px;
       }
-      .two-col {
-        grid-template-columns: 1fr;
+      .page {
+        padding-inline: 14px;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="logo">MARIA SHIFERAW</div>
-      <nav>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">MARIA SHIFERAW</div>
+      <nav class="nav-links">
         <a href="#projects">Projects</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -323,41 +468,79 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div>
-        <div class="badge">
-          <span></span>
+      <div class="hero-main">
+        <div class="pill">
+          <span class="pill-dot"></span>
           Open to Data / BI Analyst roles
         </div>
-        <h1>Data Analyst & Machine Learning Graduate</h1>
-        <p class="hero-subtitle">
+        <h1>Data Analyst &amp; Machine Learning Graduate</h1>
+        <p>
           I design and build data solutions that explain behavior, predict risk, and support business decisions.
-          My recent work focuses on <strong>diabetes risk prediction</strong> and <strong>telecom churn analytics</strong>.
+          My recent work focuses on <strong>diabetes risk prediction</strong> and <strong>telecom customer churn analytics</strong>.
         </p>
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="https://github.com/mariashiferaw" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://github.com/mariashiferaw" target="_blank" rel="noreferrer">
             View GitHub
           </a>
-          <a class="btn btn-ghost" href="#projects">
-            See featured projects
+          <a class="btn" href="#projects">See featured projects</a>
+          <a class="btn" href="Maria_Shiferaw_Resume.pdf" download>
+            Download résumé
           </a>
         </div>
-        <div class="hero-meta">
-          Python · SQL · Tableau · Power BI · Spark · Machine Learning · Statistical Modeling
+        <div class="hero-tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Spark</span>
+          <span class="tag">ML &amp; Statistics</span>
+          <span class="tag">Telecom &amp; Health Analytics</span>
         </div>
       </div>
-
-      <div class="hero-right">
-        <h2>At a glance</h2>
-        <div class="chip-row">
-          <div class="chip">Business Account Executive @ T-Mobile</div>
-          <div class="chip">MS Data Science</div>
-          <div class="chip">PhD Data Science (in progress)</div>
-          <div class="chip">Healthcare & Telecom Analytics</div>
+      <aside class="hero-side">
+        <h3>At a glance</h3>
+        <div class="side-chips">
+          <span class="chip">Business Account Executive @ T-Mobile</span>
+          <span class="chip">MS Data Science (2024)</span>
+          <span class="chip">PhD Data Science (In progress)</span>
         </div>
         <p>
-          I bridge business experience with advanced analytics: from <strong>customer churn models</strong> to
-          <strong>polygenic risk scores with ML</strong>, I enjoy turning complex data into clear recommendations.
+          I bridge business experience with advanced analytics: from customer churn models to
+          polygenic risk scores with ML, I enjoy turning complex data into clear recommendations.
         </p>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">A quick snapshot of who I am and how I work.</p>
+      <div class="about-grid">
+        <div>
+          <p class="about-text">
+            I am a data analyst and current PhD Data Science student based in the Dallas–Fort Worth area.
+            My background combines <strong>business-facing telecom experience</strong> with
+            <strong> technical training in machine learning, statistics, and data engineering tools</strong>.
+          </p>
+          <ul class="about-list">
+            <li>Comfortable working end-to-end: cleaning data, building models, and communicating results.</li>
+            <li>Enjoy translating between business stakeholders and technical teams.</li>
+            <li>Interested in roles across data analytics, BI, and applied machine learning.</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h4>Toolbox</h4>
+          <p>
+            Python (pandas, NumPy, scikit-learn, PySpark), SQL, Tableau, Power BI, Excel, TensorFlow,
+            Git, Jupyter, Spark ML, PRSice-2.
+          </p>
+          <br />
+          <h4>Current focus</h4>
+          <p>
+            Applying statistical learning and ML to real-world problems in healthcare and telecom,
+            and building clean, reproducible analytical workflows.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -367,127 +550,142 @@
       <p class="section-subtitle">
         End-to-end analytics and machine learning work highlighting preprocessing, modeling, and communication.
       </p>
-
-      <div class="projects">
-        <!-- Project 1 -->
+      <div class="projects-grid">
+        <!-- PRS / ML Diabetes -->
         <article class="project-card">
-          <div class="project-tag">Healthcare · Machine Learning</div>
+          <div class="project-meta">Health &bull; Machine Learning</div>
           <div class="project-title">PRS + ML for Type 2 Diabetes Risk</div>
-          <p class="project-desc">
-            Research project integrating polygenic risk scores with machine learning models to improve prediction
-            of Type 2 Diabetes across diverse populations, combining genomic, clinical, and lifestyle data.
-          </p>
-          <div class="project-meta">
-            <span>Python · ML · SHAP · Genomics</span>
-            <span class="project-links">
-              <a href="https://github.com/mariashiferaw/prs-ml-diabetes-risk" target="_blank" rel="noopener">Repo ↗</a>
-            </span>
+          <div class="project-desc">
+            Research project integrating polygenic risk scores with machine learning models to improve
+            prediction of Type 2 Diabetes across diverse populations using genomic, clinical, and lifestyle data.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span>Python</span><span>ML</span><span>SHAP</span><span>Genomics</span>
+            </div>
+            <a class="project-link" href="https://github.com/mariashiferaw/prs-ml-diabetes-risk" target="_blank" rel="noreferrer">
+              Repo →
+            </a>
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Diabetes Health Analytics -->
         <article class="project-card">
-          <div class="project-tag">Health Economics · EDA</div>
-          <div class="project-title">Diabetes Health Analytics</div>
-          <p class="project-desc">
-            Comprehensive preprocessing and descriptive analysis of MEPS diabetes data to study how demographics,
-            access, and costs relate to health status and care utilization.
-          </p>
-          <div class="project-meta">
-            <span>Python · pandas · Statistics</span>
-            <span class="project-links">
-              <a href="https://github.com/mariashiferaw/diabetes-health-analytics" target="_blank" rel="noopener">Repo ↗</a>
-            </span>
+          <div class="project-meta">Health Economics &bull; EDA</div>
+          <div class="project-title">Diabetes Health Analytics (MEPS)</div>
+          <div class="project-desc">
+            Comprehensive preprocessing and descriptive analysis of MEPS diabetes data to study how
+            demographics, access, and cost relate to health status and care utilization.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span>Python</span><span>EDA</span><span>Statistics</span>
+            </div>
+            <a class="project-link" href="https://github.com/mariashiferaw/diabetes-health-analytics" target="_blank" rel="noreferrer">
+              Repo →
+            </a>
           </div>
         </article>
 
-        <!-- Project 3 -->
+        <!-- Telecom Churn -->
         <article class="project-card">
-          <div class="project-tag">Telecom · Classification</div>
+          <div class="project-meta">Telecom &bull; Classification</div>
           <div class="project-title">Telecom Customer Churn Prediction</div>
-          <p class="project-desc">
+          <div class="project-desc">
             Built and compared multiple churn models using customer contracts, billing, and usage patterns to
             identify high-risk accounts and support proactive retention strategies.
-          </p>
-          <div class="project-meta">
-            <span>Python · ML · Churn</span>
-            <span class="project-links">
-              <a href="https://github.com/mariashiferaw/telecom-churn-prediction" target="_blank" rel="noopener">Repo ↗</a>
-            </span>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span>Python</span><span>ML</span><span>Churn</span>
+            </div>
+            <a class="project-link" href="https://github.com/mariashiferaw/telecom-churn-prediction" target="_blank" rel="noreferrer">
+              Repo →
+            </a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE / EDUCATION -->
+    <!-- EXPERIENCE & EDUCATION -->
     <section id="experience">
+      <h2 class="section-title">Experience &amp; Education</h2>
+      <p class="section-subtitle">Bringing analytics thinking into business-facing roles, backed by formal training.</p>
       <div class="two-col">
         <div>
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">Bringing analytics thinking into business-facing roles.</p>
-
-          <div class="item">
-            <div class="item-title">Business Account Executive · T-Mobile</div>
-            <div class="item-meta">Dallas, TX · 2024 – Present</div>
-            <ul class="item-bullets">
+          <h3 style="font-size:13px;margin-bottom:8px;">Experience</h3>
+          <div class="exp-item">
+            <h4>Business Account Executive — T-Mobile</h4>
+            <div class="exp-meta">Dallas, TX &bull; 2024 – Present</div>
+            <ul class="exp-list">
               <li>Analyze business customer usage patterns to recommend optimized connectivity solutions.</li>
               <li>Use CRM data to track KPIs, forecast pipeline, and identify high-value opportunities.</li>
               <li>Partner with stakeholders to translate insights into higher retention and revenue.</li>
             </ul>
           </div>
-
-          <div class="item">
-            <div class="item-title">Mobile Expert · T-Mobile</div>
-            <div class="item-meta">Dallas, TX · 2023 – 2024</div>
-            <ul class="item-bullets">
+          <div class="exp-item">
+            <h4>Mobile Expert — T-Mobile</h4>
+            <div class="exp-meta">Dallas, TX &bull; 2023 – 2024</div>
+            <ul class="exp-list">
               <li>Improved customer satisfaction by 39% through refined engagement workflows.</li>
               <li>Used internal tools to match plans/devices to customer behavior and needs.</li>
               <li>Mentored peers, contributing to a 15% increase in team performance.</li>
             </ul>
           </div>
         </div>
-
         <div>
-          <h2 class="section-title">Education</h2>
-          <p class="section-subtitle">Formal training in data science and analytics.</p>
-
-          <div class="item">
-            <div class="item-title">PhD in Data Science (In Progress)</div>
-            <div class="item-meta">University of North Texas · 2024 – 2027</div>
+          <h3 style="font-size:13px;margin-bottom:8px;">Education</h3>
+          <div class="edu-item">
+            <h4>PhD in Data Science (In Progress)</h4>
+            <div class="edu-meta">University of North Texas &bull; 2024 – 2027</div>
           </div>
-
-          <div class="item">
-            <div class="item-title">MS in Data Science</div>
-            <div class="item-meta">Minnesota State University · 2024</div>
+          <div class="edu-item">
+            <h4>MS in Data Science</h4>
+            <div class="edu-meta">Minnesota State University &bull; 2024</div>
           </div>
-
-          <div class="item">
-            <div class="item-title">BS</div>
-            <div class="item-meta">Meredith College · 2022</div>
-          </div>
-
-          <h2 class="section-title" id="contact" style="margin-top:12px;">Contact</h2>
-          <p class="section-subtitle">
-            The fastest way to reach me is email. I’m open to remote and DFW-area roles.
-          </p>
-          <div class="item">
-            <div class="item-meta">
-              Email: <a href="mailto:maria.k.shiferaw@gmail.com">maria.k.shiferaw@gmail.com</a><br/>
-              GitHub: <a href="https://github.com/mariashiferaw" target="_blank" rel="noopener">github.com/mariashiferaw</a><br/>
-              LinkedIn: <a href="https://www.linkedin.com/in/maria-shiferaw" target="_blank" rel="noopener">linkedin.com/in/maria-shiferaw</a>
-            </div>
+          <div class="edu-item">
+            <h4>BS</h4>
+            <div class="edu-meta">Meredith College &bull; 2022</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">The fastest way to reach me is email. I’m open to remote and DFW-area roles.</p>
+      <div class="contact-card">
+        <div class="contact-info">
+          <p>
+            If you’d like to talk about a role, collaboration, or project, feel free to reach out.
+            I’m especially interested in opportunities involving health analytics, customer analytics,
+            and applied machine learning.
+          </p>
+          <div class="contact-links">
+            <div>Email: <a href="mailto:maria.k.shiferaw@gmail.com">maria.k.shiferaw@gmail.com</a></div>
+            <div>GitHub: <a href="https://github.com/mariashiferaw" target="_blank" rel="noreferrer">github.com/mariashiferaw</a></div>
+            <div>LinkedIn: <a href="https://www.linkedin.com/in/maria-shiferaw" target="_blank" rel="noreferrer">linkedin.com/in/maria-shiferaw</a></div>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="Maria_Shiferaw_Resume.pdf" download>Download résumé</a>
+          <span class="small-note">
+            Make sure the PDF file in this repository is named <strong>Maria_Shiferaw_Resume.pdf</strong>
+            so this button works correctly.
+          </span>
+        </div>
+      </div>
+    </section>
+
     <footer>
-      © <span id="year"></span> Maria Shiferaw · Data Analytics & Machine Learning
+      © <span id="year"></span> Maria Shiferaw · Built with HTML &amp; CSS · Hosted on GitHub Pages
     </footer>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
