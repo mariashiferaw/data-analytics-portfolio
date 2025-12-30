@@ -16,7 +16,7 @@ Exploratory data analysis and preprocessing of diabetes-related variables using 
 - Descriptive statistics and visualizations
 - Insights into socioeconomic and health-related patterns
 
-> Repo: (link to the project repo once created)
+> Repo: https://github.com/mariashiferaw/diabetes-health-analytics
 
 ## 2. Polygenic Risk Score + Machine Learning for Type 2 Diabetes
 Research-based project combining polygenic risk scores with ML models to predict Type 2 Diabetes.
@@ -26,7 +26,7 @@ Research-based project combining polygenic risk scores with ML models to predict
 - Used Random Forest, Gradient Boosting, and SHAP for interpretability
 - Framework for improving disease risk prediction
 
-> Repo: (link to the project repo once created)
+> Repo: https://github.com/mariashiferaw/prs-ml-diabetes-risk
 
 ## 3. Telecom Customer Churn Prediction (ChurnGuard)
 Machine learning models to predict churn in telecom customers and identify key drivers.
@@ -36,4 +36,4 @@ Machine learning models to predict churn in telecom customers and identify key d
 - Evaluated performance using AUC, F1-score, and accuracy
 - Actionable recommendations for retention strategies
 
-> Repo: (link to the project repo once created)
+> Repo: https://github.com/mariashiferaw/telecom-churn-prediction
